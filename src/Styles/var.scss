@@ -1,0 +1,25 @@
+$white: #fff;
+$bg1: #574343;
+
+@mixin sizes($w:100%, $h:100%) {
+    width: $w;
+    height: $h;
+}
+
+@mixin box($ma:0, $pa:0) {
+    margin: $ma;
+    padding: $pa;
+}
+
+@mixin flex($di:flex, $ai:center, $jc:center, $fd:row) {
+    display: $di;
+    align-items: $ai;
+    justify-content: $jc;
+    flex-direction: $fd;
+}
+
+@mixin font($fosi:15px, $co:#fff, $textdec:none) {
+    font-size: $fosi;
+    color: $co;
+    text-decoration: $textdec;
+}

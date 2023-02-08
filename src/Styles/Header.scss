@@ -1,0 +1,27 @@
+@use "./var.scss";
+@import "./var.scss";
+
+
+.Header{
+    background-color: var.$bg1;
+    @include sizes($w:100%, $h:80px);
+    @include flex($di:flex, $ai:center, $jc:space-around, $fd:row);
+    .leftSideLogo{}
+    .rightSideDesktopLinks{
+        a{
+            @include box($ma:0,$pa:10px);
+            @include font($fosi:20px, $co:var.$white, $textdec:none);
+        }
+    }
+    .rightSideMobileLinks{}
+    .searcher{
+        input{
+            @include font($fosi:20px, $co:var.$white, $textdec:none);
+            @include box($ma:0,$pa:6px);
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            background-color: black;
+        }
+    }
+}
