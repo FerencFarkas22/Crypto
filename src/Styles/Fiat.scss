@@ -1,0 +1,41 @@
+@use './var.scss';
+@import './var.scss';
+
+.FiatContainer {
+    h1{
+        display: block;
+        width: 100%;
+    }
+    text-align: center;
+    @include sizes($w:100%, $h:auto);
+    @include flex($di:flex, $ai:center, $jc:center, $fd:row);
+    flex-wrap: wrap;
+
+    .fiatCard {
+        border-radius: 5px;
+        background-color: #7a4a4a;
+        @include sizes($w:220px, $h:100px);
+        @include flex($di:flex, $ai:center, $jc:space-between, $fd:row);
+        flex-wrap: wrap;
+        @include box($ma:5px,$pa:5px);
+        .image{
+            @include sizes($w:20%, $h:auto);
+            @include flex($di:flex, $ai:center, $jc:space-between, $fd:row);
+
+            img{
+                @include sizes($w:100%, $h:auto);
+
+            }
+        }
+        .currencyData{
+            @include flex($di:flex, $ai:center, $jc:right, $fd:column);
+            @include sizes($w:80%, $h:auto);
+            h1{
+
+            }
+            p{
+            }
+        }
+      
+    }
+}

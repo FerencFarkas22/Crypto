@@ -25,3 +25,29 @@
         }
     }
 }
+
+@media(max-width:900px){
+    .Header{
+        background-color: var.$bg1;
+        @include sizes($w:100%, $h:80px);
+        @include flex($di:flex, $ai:center, $jc:space-around, $fd:row);
+        .leftSideLogo{}
+        .rightSideDesktopLinks{
+            display: none;
+            a{
+            }
+        }
+        .rightSideMobileLinks{}
+        .searcher{
+            input{
+                @include font($fosi:20px, $co:var.$white, $textdec:none);
+                @include box($ma:0,$pa:6px);
+                border-radius: 5px;
+                border: none;
+                outline: none;
+                background-color: black;
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,41 @@
+@use './var.scss';
+@import './var.scss';
+
+.ContentContainer {
+    @include flex($di:flex, $jc:start, $ai:start,  $fd:row);
+
+    .content{
+        @include sizes($w:75%, $h:auto);
+        @include flex($di:flex, $ai:center, $jc:center, $fd:row);
+        flex-wrap: wrap;
+    }
+
+    .currency{
+        @include sizes($w:25%, $h:auto);
+        @include flex($di:flex, $ai:start, $jc:left, $fd:column);
+        text-align: left;
+        margin-top: 0px;background-color: var.$bg1;
+        
+    }
+}
+
+@media(max-width:900px){
+    .ContentContainer {
+        @include flex($di:flex, $jc:start, $ai:start,  $fd:column-reverse);
+    
+        .content{
+            @include sizes($w:100%, $h:auto);
+            @include flex($di:flex, $ai:center, $jc:center, $fd:row);
+            flex-wrap: wrap;
+        }
+    
+        .currency{
+            @include sizes($w:100%, $h:auto);
+            @include flex($di:flex, $ai:start, $jc:center, $fd:row);
+            text-align: left;
+            margin-top: 0px;background-color: var.$bg1;
+            
+        }
+    }
+     
+}

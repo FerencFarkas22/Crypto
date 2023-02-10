@@ -9,12 +9,15 @@ import './App.scss'
 
 import { FavoritesContext, FavoritesContextDefaults } from './Contexts/FavoritesContext';
 import { SearchContext, SearchContextDefaults } from './Contexts/SearchContext';
+import { FiatContext, FiatContextDefaults } from './Contexts/FiatContext';
 function App() {
   const [favorites, setFavorites] = useState(FavoritesContextDefaults.value);
   const [search, setSearch] = useState(SearchContextDefaults.value);
-
+  const [fiat, setFiat] = useState(FiatContextDefaults.value);
   const HandleSearch = (e) => {
-   setSearch(e.target.value);
+
+
+    setSearch(e.target.value);
   }
 
 
@@ -26,13 +29,15 @@ function App() {
   ]
   return (
     <div className="App">
-      <SearchContext.Provider value={{search, setSearch}}>
-      <FavoritesContext.Provider value={{ favorites, setFavorites }}>
-        <Router>
-          <Header menu={pages}><input type="text" placeholder='Keresés...' onChange={HandleSearch}/></Header>
-          <Content content={pages} />
-        </Router>
-      </FavoritesContext.Provider>
+      <SearchContext.Provider value={{ search, setSearch }}>
+        <FiatContext.Provider value={{ fiat, setFiat }}>
+          <FavoritesContext.Provider value={{ favorites, setFavorites }}>
+            <Router>
+              <Header menu={pages}><input type="text" placeholder='Keresés...' onChange={HandleSearch} /></Header>
+              <Content content={pages} />
+            </Router>
+          </FavoritesContext.Provider>
+        </FiatContext.Provider>
       </SearchContext.Provider>
     </div>
 
