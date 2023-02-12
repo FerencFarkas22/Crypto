@@ -20,7 +20,7 @@ const Content = ({content}) => {
   
     <div className="currency">
       <h1>Active Currency:</h1>
-          <h1>{fiat.name}</h1>
+          <h1 className='currencyType'>{fiat.name}</h1>
          
     </div>
     </div>
