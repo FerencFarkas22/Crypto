@@ -25,7 +25,7 @@ function App() {
     { name: "Kriptok", path: "/", menubar: true, element: <Currency /> },
     { name: "Valuták", path: "/valutes", menubar: true, element: <Fiat /> },
     { name: "Kedvencek", path: "/favorites", menubar: true, element: <Favorites /> },
-    { name: "notFound", path: "*", menubar: false, element: <>PageNotFound</> },
+    { name: "notFound", path: "*", menubar: false, element: <Currency/> },
   ]
   return (
     <div className="App">

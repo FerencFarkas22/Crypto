@@ -10,7 +10,7 @@ const Content = ({content}) => {
       <div className="content">
       <Routes >
         {content.map(route =>  (
-           route.menubar === true ? <Route key={route.path} path={route.path} element={route.element} /> : ""
+          <Route key={route.path} path={route.path} element={route.element} /> 
         ))}
     </Routes>
       </div>
