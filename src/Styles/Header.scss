@@ -2,52 +2,130 @@
 @import "./var.scss";
 
 
-.Header{
-    background-color: var.$bg1;
+.Header {
+    background-color: var.$darkBlue;
     @include sizes($w:100%, $h:80px);
     @include flex($di:flex, $ai:center, $jc:space-around, $fd:row);
-    .leftSideLogo{}
-    .rightSideDesktopLinks{
-        a{
-            @include box($ma:0,$pa:10px);
-            @include font($fosi:20px, $co:var.$white, $textdec:none);
-        }
-    }
-    .rightSideMobileLinks{}
-    .searcher{
-        input{
-            @include font($fosi:20px, $co:var.$white, $textdec:none);
-            @include box($ma:0,$pa:6px);
-            border-radius: 5px;
-            border: none;
-            outline: none;
-            background-color: black;
-        }
-    }
-}
+    color: var.$grey;
 
-@media(max-width:900px){
-    .Header{
-        background-color: var.$bg1;
-        @include sizes($w:100%, $h:80px);
+    .leftSideLogo {}
+
+    .rightSideDesktopLinks {
         @include flex($di:flex, $ai:center, $jc:space-around, $fd:row);
-        .leftSideLogo{}
-        .rightSideDesktopLinks{
-            display: none;
-            a{
-            }
+        a {
+            @include box($ma:0, $pa:20px);
+            @include font($fosi:20px, $co:var.$white, $textdec:none);
         }
-        .rightSideMobileLinks{}
-        .searcher{
-            input{
+        .searcher {
+            input {
                 @include font($fosi:20px, $co:var.$white, $textdec:none);
-                @include box($ma:0,$pa:6px);
+                @include box($ma:0, $pa:6px);
                 border-radius: 5px;
                 border: none;
                 outline: none;
-                background-color: black;
+                background-color: var.$darkBg;
             }
         }
     }
+
+    .rightSideMobileLinks {
+        @include flex($di:flex, $ai:center, $jc:space-around, $fd:row);
+        a {
+            @include box($ma:0, $pa:20px);
+            @include font($fosi:20px, $co:var.$white, $textdec:none);
+        }
+        .searcher {
+            input {
+                @include font($fosi:20px, $co:var.$white, $textdec:none);
+                @include box($ma:0, $pa:6px);
+                border-radius: 5px;
+                border: none;
+                outline: none;
+                background-color: var.$darkBg;
+            }
+        }
+    }
+    .navIcon {
+        display: none;
+    }
+}
+
+
+@media(max-width:900px) {
+    .Header {
+        .navIcon {
+            display: block;
+            .hamburgerIcon {
+                display: block;  
+            }
+        }
+
+        background-color: var.$bg1;
+        @include sizes($w:100%, $h:80px);
+        @include flex($di:flex, $ai:center, $jc:space-around, $fd:row);
+
+        .leftSideLogo {}
+
+        .rightSideDesktopLinks {
+            display: none;
+            .searcher {
+                @include box($ma:0, $pa:20px);
+                input { 
+                    @include font($fosi:20px, $co:var.$white, $textdec:none);
+                    @include box($ma:0, $pa:6px);
+                    @include sizes($w:80%, $h:auto);
     
+                    border-radius: 5px;
+                    border: none;
+                    outline: none;
+                    background-color: black;
+                }
+            }
+            
+        }
+
+        .rightSideMobileLinks {
+           
+            @include box($ma:0, $pa:20px 0 0 0);
+            @include flex($di:flex, $ai:center, $jc:space-around, $fd:column);
+            position:absolute;
+            top: 120px;
+            background-color: var.$bg1;
+            height: auto;
+            text-align: center;
+            width: 100%;
+
+            a {
+                &:first-child {
+                    border-top: none;
+                }
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                border-top: 1px solid var.$grey;
+                border-bottom: 1px solid var.$grey;
+                width: 100%;
+                @include box($ma:0, $pa:30px);
+                @include font($fosi:20px, $co:var.$white, $textdec:none);
+            }
+            .searcher {
+                @include box($ma:0, $pa:0);
+                input { 
+                    @include font($fosi:20px, $co:var.$white, $textdec:none);
+                    @include box($ma:0, $pa:6px);
+                    @include sizes($w:90vw, $h:auto);
+    
+                    border-radius: 5px;
+                    border: none;
+                    outline: none;
+                    background-color: black;
+                }
+            }
+        }
+
+       
+    }
+
 }

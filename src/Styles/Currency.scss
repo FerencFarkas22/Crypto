@@ -2,11 +2,13 @@
 @import "./var.scss";
 
 .Currency {
-    h1{
+    h1 {
         box-sizing: border-box;
-        display: block; width: 100%;
+        display: block;
+        width: 100%;
         padding: 30px;
     }
+
     @include sizes($w:100%, $h:auto);
     text-align: center;
 
@@ -14,11 +16,12 @@
         @include sizes($w:100%, $h:auto);
         @include var.flex($di:flex, $ai:center, $jc:center, $fd:row);
         flex-wrap: wrap;
+
         .favoriteBox {
             @include sizes($w:300px, $h:auto);
             @include box($ma:10px, $pa:0);
             border-radius: 5px;
-            background-color: #ffffff25;
+            background-color: var.$blue;
 
         }
     }
@@ -33,7 +36,7 @@
             @include var.flex($di:flex, $ai:center, $fd:row);
             @include box($ma:10px, $pa:0);
             border-radius: 5px;
-            background-color: #ffffff25;
+            background-color: var.$opacityBg;
 
             .image {
                 @include sizes($w:50%, $h:100%);
@@ -50,6 +53,21 @@
                 @include sizes($w:50%, $h:100%);
                 @include var.flex($di:flex, $ai:center, $jc:right, $fd:column);
 
+            }
+        }
+    }
+}
+
+@media(max-width:900px) {
+    .Currency {
+
+        .mapContainer {
+            .CryptoBox {
+                .datas {
+                    @include sizes($w:50%, $h:100%);
+                    @include var.flex($di:flex, $ai:center, $jc:right, $fd:column);
+                    @include font($fosi:12px, $co:var.$lightGrey, $textdec:none);
+                }
             }
         }
     }

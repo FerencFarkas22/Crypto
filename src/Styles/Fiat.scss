@@ -2,10 +2,13 @@
 @import './var.scss';
 
 .FiatContainer {
-    h1{
+    h1 {
         display: block;
         width: 100%;
+        @include box($ma:15px 0 20px 0, $pa:5px);
+
     }
+
     text-align: center;
     @include sizes($w:100%, $h:auto);
     @include flex($di:flex, $ai:center, $jc:center, $fd:row);
@@ -13,29 +16,49 @@
 
     .fiatCard {
         border-radius: 5px;
-        background-color: #7a4a4a;
-        @include sizes($w:220px, $h:100px);
+        background-color: var.$purplishPink;
+        @include sizes($w:240px, $h:100px);
         @include flex($di:flex, $ai:center, $jc:space-between, $fd:row);
         flex-wrap: wrap;
-        @include box($ma:5px,$pa:5px);
-        .image{
+        @include box($ma:5px, $pa:5px);
+
+        .image {
             @include sizes($w:20%, $h:auto);
             @include flex($di:flex, $ai:center, $jc:space-between, $fd:row);
 
-            img{
+            img {
                 @include sizes($w:100%, $h:auto);
 
             }
         }
-        .currencyData{
+
+        .currencyData {
             @include flex($di:flex, $ai:center, $jc:right, $fd:column);
             @include sizes($w:80%, $h:auto);
-            h1{
 
+            h1 {
+                @include box($ma:0, $pa:5px);
             }
-            p{
+
+            p {}
+        }
+    }
+}
+
+@media(max-width:620px) {
+    .FiatContainer {
+        .fiatCard {
+            @include sizes($w:90%, $h:100px);
+            .image {
+                @include sizes($w:20%, $h:50auto);
+                @include flex($di:flex, $ai:center, $jc:space-between, $fd:row);
+    
+                img {
+                    @include sizes($w:70%, $h:auto);
+    
+                }
             }
         }
-      
+        
     }
 }

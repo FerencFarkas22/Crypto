@@ -13,9 +13,12 @@
     .currency{
         @include sizes($w:25%, $h:auto);
         @include flex($di:flex, $ai:start, $jc:left, $fd:column);
+        @include box($ma:0,$pa:10px);
         text-align: left;
-        margin-top: 0px;background-color: var.$bg1;
-        
+        margin-top:90px;background-color: var.$bg1;
+        .currencyType{
+            color:var.$yellow !important;
+        }
     }
 }
 
@@ -34,6 +37,10 @@
             @include flex($di:flex, $ai:start, $jc:center, $fd:row);
             text-align: left;
             margin-top: 0px;background-color: var.$bg1;
+            h1{
+                font-size: 1.3rem;
+            }
+            
             
         }
     }

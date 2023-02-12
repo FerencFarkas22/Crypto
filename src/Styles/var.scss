@@ -1,5 +1,16 @@
 $white: #fff;
-$bg1: #574343;
+$bg1: #433E49;
+$darkBg: #242424;
+$opacityBg: #ffffff25;
+$purplishPink: #934A5f;
+$blue: #57648c;
+$purple:#c2b4d6;
+$grey:#e5e5e5;
+$darkBlue: #333D51;
+$yellow: #d3ac2b;
+$lightGrey: #f4f3ea; 
+
+
 
 @mixin sizes($w:100%, $h:100%) {
     width: $w;
@@ -18,7 +29,7 @@ $bg1: #574343;
     flex-direction: $fd;
 }
 
-@mixin font($fosi:15px, $co:#fff, $textdec:none) {
+@mixin font($fosi:15px, $co:var.$lightGrey, $textdec:none) {
     font-size: $fosi;
     color: $co;
     text-decoration: $textdec;
