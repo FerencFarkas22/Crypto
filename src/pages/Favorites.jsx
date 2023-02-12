@@ -7,9 +7,9 @@ const Favorites = () => {
 
   return (
     <div className="Favorites">
-      {favorites.map(e => {
+      {favorites.map((e, index) => {
         return(
-            <h1>{e.name}</h1>
+            <h1 key={index}>{e.name}</h1>
         )
       })}
     </div>
