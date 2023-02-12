@@ -12,7 +12,6 @@ const Currency = () => {
   const {fiat} = useContext(FiatContext);
   const [currency, setCurrency] = useState([]);
 
-
   useEffect(() => {
     axios.get("https://api.coinstats.app/public/v1/coins").then(res => {
       setCoinApi(res.data.coins)
@@ -20,20 +19,14 @@ const Currency = () => {
   }, [])
 
   function addFavorite(e, index) {
-    
     if (favorites.find(e => e.index === index)) {
-      const indexOfObject = favorites.findIndex(o => {
-        return o.index === index;
-      })
-      setCurrency(
-        favorites.splice(indexOfObject, 1)
-      )
+      const indexOfObject = favorites.findIndex(o => { return o.index === index;})
+      setCurrency(favorites.splice(indexOfObject, 1))
     } else {
       setCurrency(favorites.push({ index: index, name: e.name, image: e.icon, price: e.price }))
     }
   }
 
-  //Keresés alapján szűrés
   const filteredElements = coinApi.filter(e => e.name.toLowerCase()
     .includes(search.toString().toLowerCase()));
 
@@ -62,7 +55,7 @@ const Currency = () => {
                 <img src={e.icon} alt="" />
               </div>
               <div className="datas">
-                <h2 key={e.name}>{e.name},  </h2>
+                <h2 key={e.name}>{e.name}</h2>
                 <p>{(e.price * fiat.rate).toFixed(2)} {fiat.name}</p>
               </div>
 
