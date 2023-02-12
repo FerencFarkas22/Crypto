@@ -1,11 +1,8 @@
 import React,{useContext} from 'react'
-import {Routes, Route} from "react-router-dom"
-
-import { FavoritesContext } from "../Contexts/FavoritesContext"
 import { FiatContext } from '../Contexts/FiatContext'
+import { Routes, Route} from 'react-router-dom';
 import '../Styles/Content.scss'
 const Content = ({content}) => {
-  const { favorites } = useContext(FavoritesContext)
   const {fiat} = useContext(FiatContext);
 
   return (
