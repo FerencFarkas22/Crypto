@@ -9,7 +9,7 @@ const Currency = () => {
   const [coinApi, setCoinApi] = useState([]);
   const { favorites, setFavorites } = useContext(FavoritesContext)
   const { search } = useContext(SearchContext);
-  const {fiat} = useContext(FiatContext);
+  const { fiat } = useContext(FiatContext);
   const [currency, setCurrency] = useState([]);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const Currency = () => {
 
   function addFavorite(e, index) {
     if (favorites.find(e => e.index === index)) {
-      const indexOfObject = favorites.findIndex(o => { return o.index === index;})
+      const indexOfObject = favorites.findIndex(o => { return o.index === index; })
       setCurrency(favorites.splice(indexOfObject, 1))
     } else {
       setCurrency(favorites.push({ index: index, name: e.name, image: e.icon, price: e.price }))
@@ -32,20 +32,20 @@ const Currency = () => {
 
   return (
     <div className='Currency'>
- <div className="favorites">
-    <h1>Favorites</h1>
-    <div className="favFiat" style={{ pointerEvents: "none" }}>
-      {favorites.map((e, index) => {
-        return (
-          <div key={index} className="favoriteBox">
-            <h2 key={e.name}>{e.name}  </h2>
-            <p>{(e.price * fiat.rate).toFixed(2)} {fiat.name}</p>
-          </div>
-        )
-      })}
+      <div className="favorites">
+        <h1>Favorites</h1>
+        <div className="favFiat" style={{ pointerEvents: "none" }}>
+          {favorites.map((e, index) => {
+            return (
+              <div key={index} className="favoriteBox">
+                <h2 key={e.name}>{e.name}  </h2>
+                <p>{(e.price * fiat.rate).toFixed(2)} {fiat.name}</p>
+              </div>
+            )
+          })}
 
-    </div>
-    </div>
+        </div>
+      </div>
       <div className="mapContainer">
         <h1>All Crypto</h1>
         {filteredElements.map((e, index) => {
