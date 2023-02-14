@@ -1,6 +1,6 @@
 import React,{useContext} from 'react'
 import { FiatContext } from '../Contexts/FiatContext'
-import { Routes, Route, useLocation} from 'react-router-dom';
+import {Routes, Route, useLocation} from 'react-router-dom';
 import '../Styles/Content.scss'
 const Content = ({content}) => {
   const {fiat} = useContext(FiatContext);

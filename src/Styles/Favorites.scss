@@ -1,0 +1,58 @@
+@use "./var.scss";
+@import "./var.scss";
+
+.Favorite {
+    h1 {
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        padding: 30px;
+    }
+    @include sizes($w:100%, $h:auto);
+    text-align: center;
+
+
+    .mapList{
+        @include var.flex($di:flex, $ai:center,  $fd:row);
+        flex-wrap: wrap;
+        .FavoriteBox {
+            @include sizes($w:300px, $h:auto);
+            @include var.flex($di:flex, $ai:center, $jc:space-around, $fd:row);
+            @include box($ma:10px, $pa:0);
+            border-radius: 5px;
+            background-color: var.$opacityBg;
+
+            .favoriteImage {
+                @include sizes($w:20%, $h:100%);
+                @include var.flex($di:flex, $ai:center, $jc:left, $fd:row);
+                @include box($ma:0, $pa:0);
+
+                img {
+                    @include sizes($w:75px, $h:auto);
+                    @include box($ma:10px, $pa:0);
+                }
+            }
+
+            .title {
+                @include sizes($w:75%, $h:100%);
+                @include var.flex($di:flex, $ai:center, $jc:right, $fd:column);
+
+            }
+        }
+   
+    }
+       
+}
+
+@media(max-width:900px) {
+    .Favorite {
+        .mapList {
+            
+            .FavoriteBox {
+             
+                @include sizes($w:90%, $h:auto);
+
+            }
+        }
+    }
+}

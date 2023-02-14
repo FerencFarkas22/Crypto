@@ -54,6 +54,12 @@
                 @include var.flex($di:flex, $ai:center, $jc:right, $fd:column);
 
             }
+            .addFavorite{
+                cursor: pointer;
+               width: 10%;
+               height: 100%;
+               
+            }
         }
     }
 }
