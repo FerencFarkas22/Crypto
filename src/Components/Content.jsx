@@ -2,6 +2,8 @@ import React,{useContext} from 'react'
 import { FiatContext } from '../Contexts/FiatContext'
 import {Routes, Route, useLocation} from 'react-router-dom';
 import '../Styles/Content.scss'
+import storageConfig from "../config/storage.json"
+
 const Content = ({content}) => {
   const {fiat} = useContext(FiatContext);
   const location = useLocation();

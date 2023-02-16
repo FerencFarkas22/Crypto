@@ -3,10 +3,11 @@
 
 .Favorite {
     h1 {
+        @include sizes($w:100%, $h:auto);
+        @include box($ma:0, $pa:30px);
+
         box-sizing: border-box;
         display: block;
-        width: 100%;
-        padding: 30px;
     }
     @include sizes($w:100%, $h:auto);
     text-align: center;
@@ -49,7 +50,6 @@
         .mapList {
             
             .FavoriteBox {
-             
                 @include sizes($w:90%, $h:auto);
 
             }

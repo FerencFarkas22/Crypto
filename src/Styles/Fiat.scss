@@ -4,7 +4,7 @@
 .FiatContainer {
     h1 {
         display: block;
-        width: 100%;
+        @include sizes($w:100%, $h:auto);
         @include box($ma:15px 0 20px 0, $pa:5px);
 
     }
@@ -21,7 +21,10 @@
         @include flex($di:flex, $ai:center, $jc:space-between, $fd:row);
         flex-wrap: wrap;
         @include box($ma:5px, $pa:5px);
-
+        cursor: pointer;
+        &:hover{
+            background-color: rgba(var.$purplishPink,.5);
+        }
         .image {
             @include sizes($w:20%, $h:auto);
             @include flex($di:flex, $ai:center, $jc:space-between, $fd:row);
@@ -50,7 +53,7 @@
         .fiatCard {
             @include sizes($w:90%, $h:100px);
             .image {
-                @include sizes($w:20%, $h:50auto);
+                @include sizes($w:20%, $h:auto);
                 @include flex($di:flex, $ai:center, $jc:space-between, $fd:row);
     
                 img {

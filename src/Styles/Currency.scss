@@ -5,8 +5,8 @@
     h1 {
         box-sizing: border-box;
         display: block;
-        width: 100%;
-        padding: 30px;
+        @include sizes($w:100%, $h:auto);
+        @include box($ma:0, $pa:30px);
     }
 
     @include sizes($w:100%, $h:auto);
@@ -55,10 +55,8 @@
 
             }
             .addFavorite{
+                @include sizes($w:10%, $h:100%);
                 cursor: pointer;
-               width: 10%;
-               height: 100%;
-               
             }
         }
     }
