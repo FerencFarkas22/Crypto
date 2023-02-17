@@ -16,7 +16,7 @@
     .mapList{
         @include var.flex($di:flex, $ai:center,  $fd:row);
         flex-wrap: wrap;
-        .FavoriteBox {
+        .CryptoBox {
             @include sizes($w:300px, $h:auto);
             @include var.flex($di:flex, $ai:center, $jc:space-around, $fd:row);
             @include box($ma:10px, $pa:0);

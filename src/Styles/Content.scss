@@ -2,47 +2,101 @@
 @import './var.scss';
 
 .ContentContainer {
-    @include flex($di:flex, $jc:start, $ai:start,  $fd:row);
+    @include flex($di:flex, $jc:start, $ai:start, $fd:row);
 
-    .content{
+    .content {
         @include sizes($w:75%, $h:auto);
         @include flex($di:flex, $ai:center, $jc:center, $fd:row);
         flex-wrap: wrap;
     }
 
-    .currency{
-        @include sizes($w:25%, $h:auto);
+    .CurrencyAndFavoriteBox {
         @include flex($di:flex, $ai:start, $jc:left, $fd:column);
-        @include box($ma:0,$pa:10px);
-        text-align: left;
-        margin-top:90px;background-color: var.$bg1;
-        .currencyType{
-            color:var.$yellow !important;
+        @include sizes($w:25%, $h:auto);
+
+        .currency {
+            @include sizes($w:100%, $h:auto);
+            @include flex($di:flex, $ai:start, $jc:left, $fd:column);
+            @include box($ma:0, $pa:10px);
+            text-align: left;
+            margin-top: 90px;
+            background-color: var.$bg1;
+
+            .currencyType {
+                color: var.$yellow !important;
+
+            }
+        }
+
+        .favorites {
+            text-align: center;
+                margin: 0;padding: 0; box-sizing: border-box;
+                @include sizes($w:100%, $h:auto);
+            .favFiat {
+                @include sizes($w:100%, $h:auto);
+                @include var.flex($di:flex, $ai:start, $jc:left, $fd:column);
+                flex-wrap: wrap;
+
+                .favoriteBox {
+                    @include sizes($w:90%, $h:auto);
+                    @include box($ma:10px, $pa:0);
+                    border-radius: 5px;
+                    background-color: var.$blue;
+
+                }
+            }
         }
     }
+
 }
 
-@media(max-width:900px){
+@media(max-width:900px) {
     .ContentContainer {
-        @include flex($di:flex, $jc:start, $ai:start,  $fd:column-reverse);
-    
-        .content{
+        @include flex($di:flex, $jc:start, $ai:start, $fd:column-reverse);
+
+        .content {
             @include sizes($w:100%, $h:auto);
             @include flex($di:flex, $ai:center, $jc:center, $fd:row);
             flex-wrap: wrap;
         }
-    
-        .currency{
+
+        .CurrencyAndFavoriteBox {
             @include sizes($w:100%, $h:auto);
-            @include flex($di:flex, $ai:start, $jc:center, $fd:row);
-            text-align: left;
-            margin-top: 0px;background-color: var.$bg1;
-            h1{
-                font-size: 1.3rem;
+            text-align: center;
+
+            .currency {
+                @include sizes($w:100%, $h:auto);
+                @include flex($di:flex, $ai:start, $jc:center, $fd:row);
+                text-align: left;
+                margin-top: 0px;
+                background-color: var.$bg1;
+
+                h1 {
+                    font-size: 1.3rem;
+                }
             }
-            
-            
+            .favorites{
+                text-align: center;
+                margin: 0;padding: 0; box-sizing: border-box;
+                @include sizes($w:100%, $h:auto);
+                h1{}
+
+                .favFiat{
+                   
+                    @include flex($di:flex, $ai:center, $jc:center, $fd:row);
+                    flex-wrap: wrap;
+                    @include sizes($w:100%, $h:auto);
+                    .favoriteBox{
+                        @include flex($di:flex, $ai:center, $jc:center, $fd:row);
+                        flex-wrap: wrap;
+                        @include sizes($w:200px, $h:auto);
+                        h2{}
+                    }
+                }
+            }
+
         }
+
     }
-     
+
 }

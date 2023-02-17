@@ -1,6 +1,7 @@
 @use "./var.scss";
 @import "./var.scss";
 
+
 .Currency {
     h1 {
         box-sizing: border-box;
@@ -12,19 +13,7 @@
     @include sizes($w:100%, $h:auto);
     text-align: center;
 
-    .favFiat {
-        @include sizes($w:100%, $h:auto);
-        @include var.flex($di:flex, $ai:center, $jc:center, $fd:row);
-        flex-wrap: wrap;
-
-        .favoriteBox {
-            @include sizes($w:300px, $h:auto);
-            @include box($ma:10px, $pa:0);
-            border-radius: 5px;
-            background-color: var.$blue;
-
-        }
-    }
+  
 
     .mapContainer {
         @include sizes($w:100%, $h:auto);

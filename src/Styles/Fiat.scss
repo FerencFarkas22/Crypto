@@ -22,9 +22,11 @@
         flex-wrap: wrap;
         @include box($ma:5px, $pa:5px);
         cursor: pointer;
-        &:hover{
-            background-color: rgba(var.$purplishPink,.5);
+
+        &:hover {
+            background-color: rgba(var.$purplishPink, .5);
         }
+
         .image {
             @include sizes($w:20%, $h:auto);
             @include flex($di:flex, $ai:center, $jc:space-between, $fd:row);
@@ -50,18 +52,29 @@
 
 @media(max-width:620px) {
     .FiatContainer {
-        .fiatCard {
-            @include sizes($w:90%, $h:100px);
-            .image {
-                @include sizes($w:20%, $h:auto);
-                @include flex($di:flex, $ai:center, $jc:space-between, $fd:row);
-    
-                img {
-                    @include sizes($w:70%, $h:auto);
-    
+        width: 100%;
+        @include flex($di:flex, $ai:center, $jc:center, $fd:column);
+
+        .container {
+            @include sizes($w:80%, $h:auto);
+            @include flex($di:flex, $ai:center, $jc:center, $fd:column);
+            .fiatCard {
+
+                width: 90%;
+
+                .image {
+                    @include sizes($w:20%, $h:auto);
+                    @include flex($di:flex, $ai:center, $jc:space-between, $fd:row);
+
+                    img {
+                        @include sizes($w:70%, $h:auto);
+
+                    }
                 }
+
+                @include sizes($w:90%, $h:100px);
             }
         }
-        
+
     }
 }

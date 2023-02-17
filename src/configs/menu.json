@@ -1,0 +1,5 @@
+[
+    { "key": "cryptos", "name": "Kriptovaluták" },
+    { "key": "currencies", "name": "Devizák" },
+    { "key": "favorites", "name": "Kedvencek" }
+]

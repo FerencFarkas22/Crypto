@@ -4,6 +4,7 @@ import { FavoritesContext } from "../Contexts/FavoritesContext"
 import { SearchContext } from '../Contexts/SearchContext'
 import { FiatContext } from '../Contexts/FiatContext'
 import "../Styles/Currency.scss"
+import CryptoTile from '../Components/CryptoTile'
 
 const Currency = () => {
   const [coinApi, setCoinApi] = useState([]);
@@ -19,7 +20,6 @@ const Currency = () => {
     })
   }, [])
 
-  let btnFavorite = <p>Add</p>
 
 
   function addFavorite(e, index) {
@@ -39,41 +39,9 @@ const Currency = () => {
 
   return (
     <div className='Currency'>
-      <div className="favorites">
-        <h1>Favorites</h1>
-        <div className="favFiat" style={{ pointerEvents: "none" }}>
-          {favorites.map((e, index) => {
-            return (
-              <div key={index} className="favoriteBox">
-                <h2 key={e.name}>{e.name}  </h2>
-                <p>{(e.price * fiat.rate).toFixed(2)} {fiat.name}</p>
-
-              </div>
-            )
-          })}
-
-        </div>
-      </div>
       <div className="mapContainer">
         <h1>All Crypto</h1>
-        {filteredElements.map((e, index) => {
-          return (
-            <div key={index} className="CryptoBox">
-              <div className="image">
-                <img src={e.icon} alt="" />
-              </div>
-              <div className="datas">
-                <h2 key={e.name}>{e.name}</h2>
-                <p>{(e.price * fiat.rate).toFixed(2)} {fiat.name}</p>
-
-              </div>
-              <div onClick={() => addFavorite(e, index)} className="addFavorite">
-              <box-icon name='star' type='solid' color='#f1eeee' ></box-icon>
-              </div>
-            </div>
-
-          )
-        })}
+        {filteredElements.map(e => <CryptoTile key={e.id} value={e}/> )}
       </div>
 
     </div>
