@@ -12,9 +12,13 @@
 
     .rightSideDesktopLinks {
         @include flex($di:flex, $ai:center, $jc:space-around, $fd:row);
-        a {
-            @include box($ma:0, $pa:20px);
+        a {  
+            border-radius: 5px;
+            @include box($ma:0 5px 0 5px, $pa:15px);
             @include font($fosi:20px, $co:var.$white, $textdec:none);
+            &:hover{color:var.$yellow; background-color: rgba(var.$blue, .5);}
+            transition: .3s all ease-in-out;
+
         }
         .searcher {
             input {
@@ -31,8 +35,11 @@
     .rightSideMobileLinks {
         @include flex($di:flex, $ai:center, $jc:space-around, $fd:row);
         a {
-            @include box($ma:0, $pa:20px);
+            border-radius: 5px;
+            @include box($ma:0 5px 0 5px, $pa:15px);
             @include font($fosi:20px, $co:var.$white, $textdec:none);
+            &:hover{color:var.$yellow; background-color: rgba(var.$blue, .5);}
+            transition: .3s all ease-in-out;
         }
         .searcher {
             input {

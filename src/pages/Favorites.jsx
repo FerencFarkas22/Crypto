@@ -44,7 +44,7 @@ let intervalHandler= setInterval(function () {
     <div className="Favorite">
       <h1>Kedvencek</h1>
       <div className="mapList">
-        {filteredElements.map(e => <CryptoTile key={e.name} value={e}/>)}
+      {filteredElements.length === 0? <>Nem adtál a listához egy elemet sem!</>: filteredElements.map(e => <CryptoTile key={e.name} value={e}/>)}
       </div>
 
     </div>
