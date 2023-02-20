@@ -1,0 +1,152 @@
+@use "./var.scss";
+@import "./var.scss";
+
+.moreDataAboutCrypto {
+    @include sizes($w:100%, $h:auto);
+    @include box($ma:0, $pa:50px);
+
+    .image {
+        img {
+            @include sizes($w:50px, $h:auto);
+        }
+    }
+
+    h1 {}
+
+    .dataContainer {
+        table {
+            @include sizes($w:100%, $h:auto);
+
+            tr {
+                th {
+                    @include sizes($w:16.6%, $h:auto);
+                    @include box($ma:0, $pa:10px 0px);
+                    background-color: var.$darkBlue;
+                    border-top-left-radius: 5px;
+                    border-top-right-radius: 5px;
+                }
+            }
+
+            tr {
+                .green {
+                    color: rgb(116, 206, 116);
+                }
+
+                .red {
+                    color: rgb(228, 98, 98);
+                }
+
+                td {
+
+                    text-align: center;
+                    @include box($ma:0, $pa:10px 0px);
+                    background-color: rgba(var.$darkBlue, .5);
+                }
+            }
+        }
+
+        .socialAndDescriptionBox {
+            border-top: 10px solid var.$darkBg;
+            @include var.flex($di:flex, $ai:start, $jc:center, $fd:row);
+
+
+            .socialBox {
+                text-align: left;
+                @include var.flex($di:flex, $ai:start, $jc:start, $fd:column);
+                background-color: var.$darkBg;
+                height: 100%;
+                background-color: rgba(var.$darkBlue, .3);
+                @include sizes($w:30%, $h:auto);
+
+                h2 {
+                    @include box($ma:20px, $pa:0);
+                }
+
+                .twitter {
+                    h2 {
+
+                        color: var.$twitterBlue;
+                    }
+                }
+
+                .reddit {
+                    h2 {
+                        color: var.$redditRed;
+                    }
+                }
+
+            }
+
+            .description {
+                background-color: rgba(var.$darkBlue, .5);
+                border-right: 10px solid var.$darkBg;
+                @include sizes($w:70%, $h:auto);
+
+                h2 {}
+
+                p {
+                    @include box($ma:0, $pa:10px 20px 40px 20px);
+                    text-align: center;
+                }
+
+                a {
+                    color: var.$yellow;
+                    text-decoration: underline;
+                }
+            }
+        }
+
+    }
+}
+
+@media(max-width:900px) {
+    .moreDataAboutCrypto {
+        @include sizes($w:100%, $h:auto);
+        @include box($ma:0, $pa:0);
+
+        .dataContainer {
+            table {
+                font-size: 10px;
+            }
+
+            .socialAndDescriptionBox {
+                
+                @include var.flex($di:flex, $ai:start, $jc:center, $fd:column);
+                text-align: center;
+                .socialBox {
+                    @include sizes($w:100%, $h:auto);
+                    @include box($ma:0, $pa:20px);
+                    
+                    h2 {margin: 0 auto; line-height: 50px; font-size: 15px;}
+
+                    .twitter {
+                        @include sizes($w:100%, $h:auto);
+                        h2 {text-align: center;}
+                    }
+
+                    .reddit {
+                        @include sizes($w:100%, $h:auto);
+                        h2 {text-align: center;}
+                    }
+                }
+
+                .description {
+                    @include sizes($w:100%, $h:auto);
+                    border: none;
+
+                    h2 {}
+
+                    p {
+                        text-align: justify;
+                        line-height: 20px;
+                        @include box($ma:0, $pa:10px 10px 40px 10px);
+                    }
+
+                    a {}
+
+                }
+
+            }
+        }
+    }
+}
