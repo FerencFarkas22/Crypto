@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from "react-router-dom"
 import "../Styles/Header.scss"
 import 'boxicons'
+import Logo from "../assets/Logo.png"
 
 const Header = ({ menu, children }) => {
     const [active, setActive] = useState(false);
@@ -16,7 +17,7 @@ const Header = ({ menu, children }) => {
     return (
         <div className="Header">
             <div className="leftSideLogo">
-                <h2>LOGO</h2>
+              <Link to="/" ><img src={Logo} alt="" /></Link> 
             </div>
             <div className={active === false ? "rightSideDesktopLinks" : "rightSideMobileLinks"}>
                 <div className="searcher">{children}</div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { HashRouter as Router } from 'react-router-dom'
-import Currency from "./pages/Currency"
+import Currency from "./pages/CryptoPage"
 import Fiat from "./pages/Fiat";
 import Favorites from "./pages/Favorites"
 import Header from './Components/Header'

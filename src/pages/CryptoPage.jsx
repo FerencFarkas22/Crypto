@@ -1,13 +1,8 @@
-import React, { useContext, useEffect, useState } from 'react'
-import axios from "axios"
-import { FavoritesContext } from "../Contexts/FavoritesContext"
-import { SearchContext } from '../Contexts/SearchContext'
-import { FiatContext } from '../Contexts/FiatContext'
-import "../Styles/Currency.scss"
-import CryptoTile from '../Components/CryptoTile'
-import Coins from '../Components/Coins'
+import React from 'react'
+import "../Styles/CryptoPage.scss"
 import {Routes, Route} from "react-router-dom"
-import Coin from '../routes/Coin'
+import Coins from '../routes/Coins'
+import Coin from '../routes/CoinDatas'
 
 const Currency = () => {
   return (

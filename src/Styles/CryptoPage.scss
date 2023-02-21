@@ -1,0 +1,95 @@
+@use "./var.scss";
+@import "./var.scss";
+
+
+.Currency {
+    h1 {
+        box-sizing: border-box;
+        display: block;
+        @include sizes($w:100%, $h:auto);
+        @include box($ma:0, $pa:30px);
+    }
+
+    @include sizes($w:100%, $h:auto);
+    text-align: center;
+
+
+
+    .mapContainer {
+        @include sizes($w:100%, $h:auto);
+        @include var.flex($di:flex, $ai:center, $jc:center, $fd:row);
+        flex-wrap: wrap;
+
+        @include var.flex($di:flex, $ai:center, $fd:row);
+
+        .box {
+
+            @include sizes($w:300px, $h:auto);
+            @include var.flex($di:flex, $ai:center, $jc:center, $fd:row);
+            @include box($ma:10px, $pa:0);
+            border-radius: 5px;
+            background-color: var.$opacityBg;
+
+            a {
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+                transition: .2s all ease-out;
+
+                &:hover {
+                    background-color: rgba(black, .7);
+
+                }
+
+                text-decoration: none;
+                @include sizes($w:100%, $h:auto);
+                @include var.flex($di:flex, $ai:center, $jc:space-around, $fd:row);
+
+                .image {
+                    @include sizes($w:30%, $h:100%);
+                    @include var.flex($di:flex, $ai:center, $jc:left, $fd:row);
+                    @include box($ma:0, $pa:0);
+
+                    img {
+                        @include sizes($w:75px, $h:auto);
+                        @include box($ma:10px, $pa:0);
+                    }
+                }
+
+                .datas {
+                    color: var.$lightGrey;
+
+                    @include sizes($w:50%, $h:100%);
+                    @include var.flex($di:flex, $ai:center, $jc:left, $fd:column);
+
+                }
+
+            }
+
+            .addFavorite {
+                @include sizes($w:10%, $h:100%);
+                cursor: pointer;
+                box-icon{height: 100%;}
+
+            }
+        }
+
+
+
+    }
+}
+
+@media(max-width:900px) {
+    .Currency {
+
+        .mapContainer {
+            .box {
+                @include sizes($w:90%, $h:100%);
+
+                .datas {
+                    @include var.flex($di:flex, $ai:center, $jc:right, $fd:column);
+                    @include font($fosi:12px, $co:var.$lightGrey, $textdec:none);
+                }
+            }
+        }
+    }
+}

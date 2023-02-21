@@ -8,7 +8,14 @@
     @include flex($di:flex, $ai:center, $jc:space-around, $fd:row);
     color: var.$grey;
 
-    .leftSideLogo {}
+    .leftSideLogo {
+        @include flex($di:flex, $ai:center, $jc:center, );
+        @include sizes($w:70px,$h:70px);
+        align-items: center;
+         img{
+            @include sizes($w:75%,$h:75%);
+        }
+    }
 
     .rightSideDesktopLinks {
         @include flex($di:flex, $ai:center, $jc:space-around, $fd:row);
