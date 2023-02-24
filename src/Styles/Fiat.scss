@@ -9,72 +9,83 @@
 
     }
 
+
+
     text-align: center;
     @include sizes($w:100%, $h:auto);
     @include flex($di:flex, $ai:center, $jc:center, $fd:row);
     flex-wrap: wrap;
 
-    .fiatCard {
-        border-radius: 5px;
-        background-color: var.$purplishPink;
-        @include sizes($w:240px, $h:100px);
-        @include flex($di:flex, $ai:center, $jc:space-between, $fd:row);
-        flex-wrap: wrap;
-        @include box($ma:5px, $pa:5px);
-        cursor: pointer;
+    a {
+        text-decoration: none;
+        color: var.$grey;
 
-        &:hover {
-            background-color: rgba(var.$purplishPink, .5);
-        }
-
-        .image {
-            @include sizes($w:20%, $h:auto);
+        .fiatCard {
+            border-radius: 5px;
+            background-color: var.$purplishPink;
+            @include sizes($w:240px, $h:100px);
             @include flex($di:flex, $ai:center, $jc:space-between, $fd:row);
+            flex-wrap: wrap;
+            @include box($ma:5px, $pa:5px);
+            cursor: pointer;
 
-            img {
-                @include sizes($w:100%, $h:auto);
-
-            }
-        }
-
-        .currencyData {
-            @include flex($di:flex, $ai:center, $jc:right, $fd:column);
-            @include sizes($w:80%, $h:auto);
-
-            h1 {
-                @include box($ma:0, $pa:5px);
+            &:hover {
+                background-color: rgba(var.$purplishPink, .5);
             }
 
-            p {}
+            .image {
+                @include sizes($w:20%, $h:auto);
+                @include flex($di:flex, $ai:center, $jc:space-between, $fd:row);
+
+                img {
+                    @include sizes($w:100%, $h:auto);
+
+                }
+            }
+
+            .currencyData {
+                @include flex($di:flex, $ai:center, $jc:right, $fd:column);
+                @include sizes($w:80%, $h:auto);
+
+                h1 {
+                    @include box($ma:0, $pa:5px);
+                }
+
+                p {}
+            }
         }
     }
 }
 
 @media(max-width:620px) {
     .FiatContainer {
-        width: 100%;
+        @include sizes($w:100%, $h:auto);
         @include flex($di:flex, $ai:center, $jc:center, $fd:column);
 
         .container {
-            @include sizes($w:80%, $h:auto);
-            @include flex($di:flex, $ai:center, $jc:center, $fd:column);
-            .fiatCard {
+            @include sizes($w:100%, $h:auto);
 
-                width: 90%;
+            a {
+                @include flex($di:flex, $ai:center, $jc:center, $fd:column);
+                @include sizes($w:100%, $h:auto);
 
-                .image {
-                    @include sizes($w:20%, $h:auto);
-                    @include flex($di:flex, $ai:center, $jc:space-between, $fd:row);
+                .fiatCard {
 
-                    img {
-                        @include sizes($w:70%, $h:auto);
 
+                    .image {
+                        @include sizes($w:20%, $h:auto);
+                        @include flex($di:flex, $ai:center, $jc:space-between, $fd:row);
+
+                        img {
+                            @include sizes($w:70%, $h:auto);
+
+                        }
                     }
+
+                    @include sizes($w:90%, $h:100px);
                 }
-
-                @include sizes($w:90%, $h:100px);
             }
-        }
 
+        }
     }
 }

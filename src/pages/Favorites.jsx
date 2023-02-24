@@ -5,6 +5,7 @@ import '../Styles/Favorites.scss'
 import CryptoTile from '../Components/CryptoTile'
 import { SearchContext } from '../Contexts/SearchContext'
 import axios from 'axios';
+import { Link } from 'react-router-dom'
 
 
 const Favorites = (props) => {
@@ -44,7 +45,7 @@ let intervalHandler= setInterval(function () {
     <div className="Favorite">
       <h1>Kedvencek</h1>
       <div className="mapList">
-      {filteredElements.length === 0? <>Nem adtál a listához egy elemet sem!</>: filteredElements.map(e => <CryptoTile key={e.name} value={e}/>)}
+      {filteredElements.length === 0? <div className="emptyFavorite"><p> Nem adtál a listához egy elemet sem!</p>  <button><Link to="/"> Vissza a Főoldalra</Link></button></div>: filteredElements.map(e => <CryptoTile key={e.name} value={e}/>)}
       </div>
 
     </div>

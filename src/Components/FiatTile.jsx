@@ -2,6 +2,7 @@
 import React, { useContext,useEffect } from 'react'
 import { FiatContext } from '../Contexts/FiatContext';
 import storageConfig from "../configs/storage.json"
+import { Link } from 'react-router-dom';
 const FiatTile = (props) => {
     const {fiat, setFiat } = useContext(FiatContext);
   
@@ -14,7 +15,7 @@ const FiatTile = (props) => {
 
     return (
         <div className="container">
-             
+             <Link to="/">
             <div key={props.value.name} onClick={() => handleCurrencyFiat(props.value)} className="fiatCard" >
 
                 <div className="image">
@@ -25,6 +26,7 @@ const FiatTile = (props) => {
                     <p>1$ = {(props.value.rate).toFixed(2)} {props.value.symbol}</p>
                 </div>
             </div>
+            </Link>
         </div>
 
     )

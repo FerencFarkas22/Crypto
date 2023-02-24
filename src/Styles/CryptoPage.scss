@@ -7,7 +7,7 @@
         box-sizing: border-box;
         display: block;
         @include sizes($w:100%, $h:auto);
-        @include box($ma:0, $pa:30px);
+        @include box($ma:0, $pa:20px);
     }
 
     @include sizes($w:100%, $h:auto);
@@ -24,7 +24,7 @@
 
         .box {
 
-            @include sizes($w:300px, $h:auto);
+            @include sizes($w:300px, $h:100px);
             @include var.flex($di:flex, $ai:center, $jc:center, $fd:row);
             @include box($ma:10px, $pa:0);
             border-radius: 5px;
@@ -36,12 +36,13 @@
                 transition: .2s all ease-out;
 
                 &:hover {
+                   
                     background-color: rgba(black, .7);
 
                 }
 
                 text-decoration: none;
-                @include sizes($w:100%, $h:auto);
+                @include sizes($w:100%);
                 @include var.flex($di:flex, $ai:center, $jc:space-around, $fd:row);
 
                 .image {
@@ -58,7 +59,7 @@
                 .datas {
                     color: var.$lightGrey;
 
-                    @include sizes($w:50%, $h:100%);
+                    @include sizes($w:50%, $h:auto);
                     @include var.flex($di:flex, $ai:center, $jc:left, $fd:column);
 
                 }
